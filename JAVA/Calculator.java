@@ -28,7 +28,7 @@ class Calculator {
                     System.out.println("Error");
                 }
                 r=a/b;
-                o= "/";
+                o="/";
                 break;
             default:
                 System.out.println("Invalid");
