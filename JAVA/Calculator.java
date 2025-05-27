@@ -1,6 +1,8 @@
 import java.util.Scanner;
-class Calculator {
-    public static void main(String[] args) {
+class Calculator
+{
+    public static void main(String[] args)
+    {
         String o;
         Scanner sc=new Scanner(System.in);
         int a=sc.nextInt();
