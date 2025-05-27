@@ -26,7 +26,7 @@ public  class Grade
         else
         {
 
-            System.out.println("E");
+            System.out.println("F");
         }  
     }
 }
