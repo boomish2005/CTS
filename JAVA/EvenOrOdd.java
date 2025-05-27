@@ -7,11 +7,11 @@ public class EvenOrOdd {
         int n=sc.nextInt();
         if(n%2==0)
         {
-            System.err.println("Even");
+            System.out.println("Even");
         }
         else
         {
-            System.err.println("odd");
+            System.out.println("odd");
         }
     }
 }

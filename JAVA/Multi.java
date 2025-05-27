@@ -6,7 +6,7 @@ public class Multi {
         int j=10;
         for(int i=1;i<=n;i++)
         {
-            System.err.println("table"+i*j);
+            System.out.println("table"+i*j);
         }
     }
 }

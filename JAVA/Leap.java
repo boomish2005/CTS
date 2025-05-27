@@ -5,11 +5,11 @@ public class Leap {
         int n=sc.nextInt();
         if(n%4==0 || n%100!=0 || n%400!=0)
         {
-            System.err.println("leap");
+            System.out.println("leap");
         }
         else
         {
-            System.err.println("not");
+            System.out.println("not");
         }
     }
 }
