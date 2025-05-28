@@ -3,28 +3,27 @@ public class Interface {
     {
         void play();
     }
-    class Guitar implements  Plays
+    public static class Guitar implements Play
     {
         public void play()
         {
             System.out.println("guitar");
         }
     }
-    class Pano implements  Plays
+    static class Pano implements Play
     {
         public void play()
         {
             System.out.println("pano");
         }
     }
-    public class Main
+    public static class Main
     {
         public static void main(String[] args) {
-            Plays g=new Guitar();
-            Plays p=new Pano();
+            Play g=new Guitar();
+            Play p=new Pano();
             g.play();
             p.play();
         }
     }
-
 }
