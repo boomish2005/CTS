@@ -1,7 +1,6 @@
 public class Classcreation_Objectcreation {
-    public class Car
-
-{
+    static class Car
+    {
     String make;
     String model;
     int year;
