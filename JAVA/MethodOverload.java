@@ -1,4 +1,4 @@
-public class Overload {
+public class MethodOverload {
     public int add(int a,int b)
     {
         return a+b;
@@ -13,7 +13,7 @@ public class Overload {
     }
     public static void main(String[] args)
     {
-        Overload sc=new Overload();
+        MethodOverload sc=new MethodOverload();
         int s=sc.add(4,5,6);
         System.out.println(s); 
         int r=sc.add(2,3,4,5);
