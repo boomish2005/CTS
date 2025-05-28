@@ -1,8 +1,7 @@
 import java.util.Scanner;
-
 public class CustomException 
 {
-    class InvalidAgeException extends Exception
+    static class InvalidAgeException extends Exception
     {
         public InvalidAgeException(String m)
         {
