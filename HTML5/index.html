@@ -5,45 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Community Event Portal</title>
     <style>
-        #welcomeBanner
+        #s
         {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            text-align: center;
+            background-color:#4CAF50;
+            color:white;
+            padding:10px;
+            text-align:center;
         }
-        .highlight
+        .h
         {
-            font-weight: bold;
-            color: #ff4500;
+            font-weight:bold;
+            color:#ff4500;
         }
         .event-img
         {
-            border: 2px solid #333;
-            width: 100px;
-            height: 100px;
+            border:2px solid #333;
+            width:100px;
+            height:100px;
         }
         form
         {
-            margin: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
+            margin:20px;
+            padding:10px;
+            border:1px solid #ccc;
         }
         nav
         {
-            background-color: #333;
-            padding: 10px;
+            background-color:#333;
+            padding:10px;
         }
         nav a
         {
-            color: white;
-            margin-right: 10px;
-            text-decoration: none;
+            color:white;
+            margin-right:10px;
+            text-decoration:none;
         }
         footer
         {
-            text-align: center;
-            margin-top: 20px;
+            text-align:center;
+            margin-top:20px;
         }
     </style>
 </head>
@@ -56,9 +56,9 @@
     </nav>
     <main>
         <section id="home">
-            <div id="welcomeBanner">
+            <div id="s">
                 <h1>Welcome to Our Community Portal!</h1>
-                <p class="highlight">Check out our special events this month!</p>
+                <p class="h">Check out our special events</p>
             </div>
         </section>
         <section id="events">
@@ -66,7 +66,7 @@
             <table>
                 <tbody>
                     <tr>
-                        <td><img src="event1.jpg" alt="Summer Festival" title="Summer Festival 2024" class="event-img"><br></td>
+                        <td><img src="event1.jpg" alt="summer Festival" title="Summer Festival 2024" class="event-img"><br></td>
                         <td><img src="event2.jpg" alt="Charity Run" title="Charity Run 2024" class="event-img"><br></td>
                         <td><img src="event3.jpg" alt="Art Fair" title="Art Fair 2024" class="event-img"><br></td>
                     </tr>
@@ -82,7 +82,7 @@
         </section>
         <section id="contact">
             <h2>Register for an Event</h2>
-            <form id="eventForm" onsubmit="handleSubmit(event)">
+            <form id="eventForm" onsubmit="sub(event)">
                 <label for="name">Name:</label><br>
                 <input type="text" id="name" placeholder="Enter your name" required autofocus><br>
                 <label for="email">Email:</label><br>
@@ -90,27 +90,27 @@
                 <label for="eventDate">Event Date:</label><br>
                 <input type="date" id="eventDate" required><br>
                 <label for="eventType">Event Type:</label><br>
-                <select id="eventType" onchange="displayFee()" required>
+                <select id="eventType" onchange="f()" required>
                     <option value="">Select an event</option>
                     <option value="festival">Festival ($10)</option>
                     <option value="workshop">Workshop ($5)</option>
                     <option value="concert">Concert ($15)</option>
                 </select><br>
                 <label for="phone">Phone (Optional):</label><br>
-                <input type="tel" id="phone" onblur="validatePhone()"><br>
+                <input type="tel" id="phone" onblur="v()"><br>
                 <label for="message">Message:</label><br>
-                <textarea id="message" placeholder="Your message" onkeyup="countCharacters()"></textarea><br>
+                <textarea id="message" placeholder="Your message" onkeyup="count()"></textarea><br>
                 <p>Characters: <span id="charCount">0</span></p>
                 <button type="submit">Register</button>
-                <button type="button" onclick="clearPreferences()">Clear Preferences</button>
+                <button type="button" onclick="cl()">Clear Preferences</button>
                 <p><output id="formOutput"></output></p>
             </form>
-            <button type="button" onclick="findNearbyEvents()">Find Nearby Events</button>
+            <button type="button" onclick="find()">Find Nearby Events</button>
             <p id="locationOutput"></p>
         </section>
         <section>
             <h2>Event Promo</h2>
-            <video id="promoVideo" controls oncanplay="videoReady()">
+            <video id="promoVideo" controls oncanplay="vid()">
                 <source src="promo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -118,112 +118,107 @@
         </section>
     </main>
     <footer>
-        <p>© 2025 Local Community Council</p>
+        <p>© 2025</p>
     </footer>
     <script>
-        function validatePhone()
+        function v()
         {
-            const phone = document.getElementById('phone').value;
-            const phonePattern = /^\d{10}$/;
-            if (phone && !phonePattern.test(phone)) {
-                alert('Please enter a valid 10-digit phone number.');
-            }
-        }
-
-        function displayFee()
-        {
-            const eventType = document.getElementById('eventType').value;
-            const fees = { festival: '$10', workshop: '$5', concert: '$15' };
-            document.getElementById('formOutput').textContent = eventType ? `Event Fee: ${fees[eventType]}` : '';
-        }
-
-        function handleSubmit(event)
-        {
-            event.preventDefault();
-            const phone = document.getElementById('phone').value;
-            const phonePattern = /^\d{10}$/;
+            const phone=document.getElementById('phone').value;
+            const phonePattern=/^\d{10}$/;
             if (phone && !phonePattern.test(phone))
             {
-                document.getElementById('formOutput').textContent = 'Please enter a valid 10-digit phone number.';
+                alert('Please enter 10-digit phone number.');
+            }
+        }
+
+        function f()
+        {
+            const eventType=document.getElementById('eventType').value;
+            const fees={festival:'$10',workshop:'$5',concert:'$15'};
+            document.getElementById('formOutput').textContent=eventType?`Event Fee:${fees[eventType]}`:'';
+        }
+
+        function sub(event)
+        {
+            event.preventDefault();
+            const phone=document.getElementById('phone').value;
+            const phonePattern=/^\d{10}$/;
+            if (phone && !phonePattern.test(phone))
+            {
+                document.getElementById('formOutput').textContent='Please enter 10-digit phone number.';
                 return;
             }
-            document.getElementById('formOutput').textContent = 'Registration submitted successfully!';
+            document.getElementById('formOutput').textContent='Registration submitted';
+        }
+        function count()
+        {
+            const message=document.getElementById('message').value;
+            document.getElementById('charCount').textContent=message.length;
         }
 
-        function countCharacters()
+        document.querySelectorAll('.event-img').forEach(img=>
         {
-            const message = document.getElementById('message').value;
-            document.getElementById('charCount').textContent = message.length;
-        }
-
-        document.querySelectorAll('.event-img').forEach(img =>
-        {
-            img.ondblclick = () => {
-                img.style.width = img.style.width === '200px' ? '100px' : '200px';
-            };
+            img.ondblclick=()=>{img.style.width=img.style.width==='200px'?'100px':'200px';};
         });
 
-        function videoReady()
+        function vid()
         {
-            document.getElementById('videoStatus').textContent = 'Video ready to play!';
+            document.getElementById('videoStatus').textContent='Video ready!';
         }
 
-        window.onbeforeunload = function()
+        window.onbeforeunload=function()
         {
-            if (document.getElementById('name').value || document.getElementById('email').value) {
-                return 'You have unsaved changes. Are you sure you want to leave?';
+            if (document.getElementById('name').value||document.getElementById('email').value){
+                return 'You have unsaved changes';
             }
         };
-
-        window.onload = function()
+        window.onload=function()
         {
-            const savedEvent = localStorage.getItem('eventType');
-            if (savedEvent) {
-                document.getElementById('eventType').value = savedEvent;
-                displayFee();
+            const savedEvent=localStorage.getItem('eventType');
+            if (savedEvent){
+                document.getElementById('eventType').value=savedEvent;
+                f();
             }
         };
-
-        document.getElementById('eventType').addEventListener('change', () =>
-        {
-            localStorage.setItem('eventType', document.getElementById('eventType').value);
+        document.getElementById('eventType').addEventListener('change',()=>{
+            localStorage.setItem('eventType',document.getElementById('eventType').value);
         });
 
-        function clearPreferences()
+        function cl()
         {
             localStorage.clear();
             sessionStorage.clear();
-            document.getElementById('formOutput').textContent = 'Preferences cleared!';
+            document.getElementById('formOutput').textContent='Preferences cleared!';
             document.getElementById('eventForm').reset();
         }
 
-        function findNearbyEvents()
+        function find()
         {
             if (navigator.geolocation)
             {
                 navigator.geolocation.getCurrentPosition(
-                    (position) =>
+                    (position)=>
                     {
-                        const { latitude, longitude } = position.coords;
-                        document.getElementById('locationOutput').textContent = `Your location: ${latitude}, ${longitude}`;
+                        const {latitude,longitude}=position.coords;
+                        document.getElementById('locationOutput').textContent=`Your location: ${latitude},${longitude}`;
                     },
-                    (error) => 
+                    (error)=>
                     {
-                        let message = 'Error getting location.';
-                        if (error.code === error.PERMISSION_DENIED) message = 'Location permission denied.';
-                        else if (error.code === error.TIMEOUT) message = 'Location request timed out.';
-                        document.getElementById('locationOutput').textContent = message;
+                        let message='Error getting location.';
+                        if (error.code===error.PERMISSION_DENIED) message='Location permission denied.';
+                        else if (error.code===error.TIMEOUT) message='Location request timed out.';
+                        document.getElementById('locationOutput').textContent=message;
                     },
-                    { enableHighAccuracy: true, timeout: 5000 }
+                    {enableHighAccuracy:true,timeout:5000}
                 );
             }
-            else 
+            else
             {
-                document.getElementById('locationOutput').textContent = 'Geolocation not supported.';
+                document.getElementById('locationOutput').textContent='Geolocation not support.';
             }
         }
 
-        console.log('Page loaded. Inspect variables in Chrome DevTools.');
+        console.log('Page load');
     </script>
 </body>
 </html>
