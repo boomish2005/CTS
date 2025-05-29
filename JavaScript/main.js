@@ -102,7 +102,8 @@ async function fetchEvents(){
 function displayEvents(eventList){
     eventListDiv=document.querySelector("#eventList");
     eventListDiv.innerHTML="";
-    eventList.forEach(({id,name,date,seats,category})=>{
+    eventList.forEach(({id,name,date,seats,category})=>
+        {
     if(new Date(date)>new Date()&&seats>0){
         const card=document.createElement("div");
         card.className="event-card";
@@ -117,7 +118,8 @@ function displayEvents(eventList){
         $(card).fadeIn();
     }
     });
-    $(".register-btn").click(function(){
+    $(".register-btn").click(function()
+    {
     const eventId=$(this).data("id");
     const userName=$("#userName").val();
     const userEmail=$("#userEmail").val();
