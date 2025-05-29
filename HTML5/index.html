@@ -175,12 +175,14 @@
         window.onload=function()
         {
             const savedEvent=localStorage.getItem('eventType');
-            if (savedEvent){
+            if (savedEvent)
+            {
                 document.getElementById('eventType').value=savedEvent;
                 f();
             }
         };
-        document.getElementById('eventType').addEventListener('change',()=>{
+        document.getElementById('eventType').addEventListener('change',()=>
+        {
             localStorage.setItem('eventType',document.getElementById('eventType').value);
         });
 
